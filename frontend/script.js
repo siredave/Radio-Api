@@ -11,7 +11,7 @@ document.getElementById("loadStation").addEventListener("click", async () => {
   errorMsg.textContent = "";
 
   try {
-    const res = await fetch("http://localhost:5000/api/stream");
+    const res = await fetch("https://radio-api-8yws.onrender.com/api/stream");
     if (!res.ok) throw new Error("Failed to fetch station data");
 
     const data = await res.json();
