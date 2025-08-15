@@ -6,10 +6,11 @@ const STREAM_URL = process.env.STREAM_URL;
 
 // JSON metadata endpoint
 export const getStreamInfo = (req, res) => {
+  const base = `${req.protocol}://${req.get('host')}`;
   res.json({
     name: "My Awesome Radio",
     description: "24/7 hits and awesome tunes.",
-    stream_url: `http://localhost:${process.env.PORT}/api/radio` // Proxy URL
+    stream_url: `${base}/api/radio` // Proxy URL
   });
 };
 
