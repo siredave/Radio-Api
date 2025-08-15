@@ -18,7 +18,7 @@ document.getElementById("loadStation").addEventListener("click", async () => {
 
     stationName.textContent = data.name;
     stationDesc.textContent = data.description;
-    audioSource.src = data.stream_url;
+    audioSource.src = data.streamUrl;
 
     audioPlayer.load();
     stationInfo.classList.remove("hidden");
