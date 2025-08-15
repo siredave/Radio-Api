@@ -15,10 +15,11 @@ document.getElementById("loadStation").addEventListener("click", async () => {
     if (!res.ok) throw new Error("Failed to fetch station data");
 
     const data = await res.json();
-
+ 
+    if (!data.stream_url) throw new Error("Stream URL not found in response");
     stationName.textContent = data.name;
     stationDesc.textContent = data.description;
-    audioSource.src = data.streamUrl;
+    audioSource.src = data.stream_url;
 
     audioPlayer.load();
     stationInfo.classList.remove("hidden");
